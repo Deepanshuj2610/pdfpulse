@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "599779396489",
+    "project_id": "pdfpulseaudio",
+    "storage_bucket": "pdfpulseaudio.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:599779396489:android:348d12eb71d1315ddeaf58",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "599779396489-jqpf0q8hqordbq9ifra0udkvn7r92fmp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.app",
+            "certificate_hash": "a1c533b3893f4d6fe01623af381cbd26b6a37742"
+          }
+        },
+        {
+          "client_id": "599779396489-gbnt5mnj9h2d1a0ugkdsm6f7b7s04rom.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm8SkznsN1b-yAhsFhufEzYS8LybwN1CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "599779396489-gbnt5mnj9h2d1a0ugkdsm6f7b7s04rom.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
