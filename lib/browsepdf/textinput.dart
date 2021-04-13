@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:app/browsepdf/browsepdf.dart';
-import 'package:app/tts/tts.dart';
+import 'package:pdfpulse/browsepdf/browsepdf.dart';
+import 'package:pdfpulse/tts/tts.dart';
  class MyCustomForm extends StatefulWidget {
   @override
   _MyCustomFormState createState() => _MyCustomFormState();

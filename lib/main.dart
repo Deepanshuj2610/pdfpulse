@@ -1,8 +1,7 @@
-import 'package:app/login/login.dart';
+import 'package:pdfpulse/login/login.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:app/browsepdf/textinput.dart';
-import 'package:app/browsepdf/browsepdf.dart';
+import 'package:pdfpulse/browsepdf/textinput.dart';
 
 void main() {
   runApp(MyApp());
@@ -42,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Colors.brown[800],
+      color: Colors.black,
       child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -59,7 +58,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: browsepdf(),
+      home: MyCustomForm(),
     );
   }
 }

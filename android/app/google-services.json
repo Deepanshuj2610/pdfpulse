@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "599779396489",
-    "project_id": "pdfpulseaudio",
-    "storage_bucket": "pdfpulseaudio.appspot.com"
+    "project_number": "654185973876",
+    "project_id": "pdfpulse-2ce0f",
+    "storage_bucket": "pdfpulse-2ce0f.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:599779396489:android:348d12eb71d1315ddeaf58",
+        "mobilesdk_app_id": "1:654185973876:android:572f3985653e243db32921",
         "android_client_info": {
-          "package_name": "com.example.app"
+          "package_name": "com.example.pdfpulse"
         }
       },
       "oauth_client": [
         {
-          "client_id": "599779396489-jqpf0q8hqordbq9ifra0udkvn7r92fmp.apps.googleusercontent.com",
+          "client_id": "654185973876-skqit8vjhjroo1r97n4s7itb59pc2o12.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.example.app",
+            "package_name": "com.example.pdfpulse",
             "certificate_hash": "a1c533b3893f4d6fe01623af381cbd26b6a37742"
           }
         },
         {
-          "client_id": "599779396489-gbnt5mnj9h2d1a0ugkdsm6f7b7s04rom.apps.googleusercontent.com",
+          "client_id": "654185973876-kt449m7e4nekhn22ah8laqea6pjg28n9.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDm8SkznsN1b-yAhsFhufEzYS8LybwN1CQ"
+          "current_key": "AIzaSyBBlPCSUa60Dm6Z1S0_P1-xSxL5YHVhWX4"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "599779396489-gbnt5mnj9h2d1a0ugkdsm6f7b7s04rom.apps.googleusercontent.com",
+              "client_id": "654185973876-kt449m7e4nekhn22ah8laqea6pjg28n9.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

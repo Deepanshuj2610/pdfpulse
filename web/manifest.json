@@ -1,6 +1,6 @@
 {
-    "name": "pdfpulse",
-    "short_name": "pdfpulse",
+    "name": "pdfpulsefrontend",
+    "short_name": "pdfpulsefrontend",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

@@ -1,13 +1,10 @@
-//import 'dart:js';
-//import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'dart:io';
 import 'dart:math';
 import 'dart:async';
 import 'package:pdf_text/pdf_text.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:app/tts/tts.dart';
+import 'package:pdfpulse/tts/tts.dart';
 
 class browsepdf extends StatefulWidget {
   @override
@@ -28,105 +25,73 @@ class _browsepdf extends State {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: const Text('PDF Text Example'),
-            centerTitle: true,
-            elevation: 10.0,
-            //backgroundColor: Colors.deepPurple[700],
-            leading: IconButton(
-              icon: Icon(Icons.menu),
-              onPressed: () {},
-            ),
-            flexibleSpace: Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [Colors.deepPurple[900], Colors.indigo[300]],
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.topCenter,
-                ),
-              ),
-            ),
           ),
-          body: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Row(children: [
-              FlatButton(onPressed: _pickPDFText, child: Stack(children: <Widget>[
-                Image.asset('images/bm1.png'),
-                Container(
-                  child: Text("Pick PDF Document" , 
-                    style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15.0),
-                    textAlign: TextAlign.right,
-                    softWrap: true,
-                    maxLines: 2,
+          body: Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(10),
+            child: ListView(
+              children: <Widget>[
+                FlatButton(
+                  child: Text(
+                    "Pick PDF document",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 80.0, horizontal: 15.0),
+                  color: Colors.blueAccent,
+                  onPressed: _pickPDFText,
+                  padding: EdgeInsets.all(5),
                 ),
-              ],),
-              ),
-              FlatButton(onPressed: _buttonsEnabled ? _readRandomPage : () {}, child: Stack(children: <Widget>[
-                Image.asset('images/bm1.png'),
-                Container(
-                  child: Text("Read random page" , 
-                    style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15.0),
-                    textAlign: TextAlign.right,
-                    softWrap: true,
-                    maxLines: 2,
+                FlatButton(
+                  child: Text(
+                    "Read random page",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 80.0, horizontal: 15.0),
+                  color: Colors.blueAccent,
+                  onPressed: _buttonsEnabled ? _readRandomPage : () {},
+                  padding: EdgeInsets.all(5),
                 ),
-              ],),),],),
-              Row(children: [
-              FlatButton(onPressed: _buttonsEnabled ? _readWholeDoc : () {}, child: Stack(children: <Widget>[
-                Image.asset('images/bm1.png'),
-                Container(
-                  child: Text("Read whole document" , 
-                    style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15.0),
-                    textAlign: TextAlign.right,
-                    softWrap: true,
-                    maxLines: 2,
+                FlatButton(
+                  child: Text(
+                    "Read whole document",
+                    style: TextStyle(color: Colors.white),
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 80.0, horizontal: 15.0),
+                  color: Colors.blueAccent,
+                  onPressed: _buttonsEnabled ? _readWholeDoc : () {},
+                  padding: EdgeInsets.all(5),
                 ),
-              ],),
-              ),
-              FlatButton(onPressed: (){}, child: Stack(children: <Widget>[
-                Image.asset('images/bm1.png'),
-                Container(
-                  child: Text("??????????" , 
-                    style: TextStyle(color: Colors.brown, fontWeight: FontWeight.bold, fontSize: 15.0),
-                    textAlign: TextAlign.right,
-                    softWrap: true,
-                    maxLines: 2,
+                Padding(
+                  child: Text(
+                    _pdfDoc == null
+                        ? "Pick a new PDF document and wait for it to load..."
+                        : "PDF document loaded, ${_pdfDoc.length} pages\n",
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.center,
                   ),
-                  padding: EdgeInsets.symmetric(vertical: 80.0, horizontal: 15.0),
+                  padding: EdgeInsets.all(15),
                 ),
-              ],),),],),
-              Padding(
-                    child: Text(
-                      _pdfDoc == null
-                          ? "Pick a new PDF document and wait for it to load..."
-                          : "PDF document loaded, ${_pdfDoc.length} pages\n",
-                      style: TextStyle(fontSize: 18),
-                      textAlign: TextAlign.center,
-                    ),
-                    padding: EdgeInsets.all(15),
+                Padding(
+                  child: Text(
+                    _text == "" ? "" : "Text:",
+                    style: TextStyle(fontSize: 18),
+                    textAlign: TextAlign.center,
                   ),
-                  Padding(
-                    child: Text(
-                      _text == "" ? "" : "Text:",
-                      style: TextStyle(fontSize: 18),
-                      textAlign: TextAlign.center,
-                    ),
-                    padding: EdgeInsets.all(15),
-                  ),
-                  Text(_text),
-                  
-        ],),
-    ),);
-    }
+                  padding: EdgeInsets.all(15),
+                ),
+                Text(_text),
+                RaisedButton(
+                  child: Text("Convert", style: TextStyle(fontSize: 20),),
+                  onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => tts(value : _text),
+                      ));
+                })
+              ],
+            ),
+          )),
+    );
+  }
 
   /// Picks a new PDF document from the device
   Future _pickPDFText() async {
@@ -170,58 +135,3 @@ class _browsepdf extends State {
     });
   }
 }
-
-
-// padding: EdgeInsets.all(10),
-//               child: ListView(
-//                 children: <Widget>[
-//                   FlatButton(
-//                     child: Text(
-//                       "Pick PDF document",
-//                       style: TextStyle(color: Colors.white),
-//                     ),
-//                     color: Colors.blueAccent,
-//                     onPressed: _pickPDFText,
-//                     padding: EdgeInsets.all(5),
-//                   ),
-//                   FlatButton(
-//                     child: Text(
-//                       "Read random page",
-//                       style: TextStyle(color: Colors.white),
-//                     ),
-//                     color: Colors.blueAccent,
-//                     onPressed: _buttonsEnabled ? _readRandomPage : () {},
-//                     padding: EdgeInsets.all(5),
-//                   ),
-//                   FlatButton(
-//                     child: Text(
-//                       "Read whole document",
-//                       style: TextStyle(color: Colors.white),
-//                     ),
-//                     color: Colors.blueAccent,
-//                     onPressed: _buttonsEnabled ? _readWholeDoc : () {},
-//                     padding: EdgeInsets.all(5),
-//                   ),
-//                   Padding(
-//                     child: Text(
-//                       _pdfDoc == null
-//                           ? "Pick a new PDF document and wait for it to load..."
-//                           : "PDF document loaded, ${_pdfDoc.length} pages\n",
-//                       style: TextStyle(fontSize: 18),
-//                       textAlign: TextAlign.center,
-//                     ),
-//                     padding: EdgeInsets.all(15),
-//                   ),
-//                   Padding(
-//                     child: Text(
-//                       _text == "" ? "" : "Text:",
-//                       style: TextStyle(fontSize: 18),
-//                       textAlign: TextAlign.center,
-//                     ),
-//                     padding: EdgeInsets.all(15),
-//                   ),
-//                   Text(_text),
-                  
-//                 ],
-//               ),
-//             ),

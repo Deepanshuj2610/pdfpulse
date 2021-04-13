@@ -1,4 +1,4 @@
-# app
+# pdfpulse
 
 A new Flutter project.
 
