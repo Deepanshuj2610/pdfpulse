@@ -24,44 +24,57 @@ class _MyCustomFormState extends State<MyCustomForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Retrieve Text Input'),
+        centerTitle: true,
+        title: Text('PDF PULSE',
+        style: TextStyle(color: Colors.cyan[300]),
+        ),
+        elevation: 10,
+        backgroundColor: Colors.black,
       ),
       body:
-      Column(
-        children:[
-      RaisedButton(  
-                  child: Text("PDF", style: TextStyle(fontSize: 20),),  
-                  onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => browsepdf(),
-                      ));
-                  },  
-                  color: Colors.red,  
-                  textColor: Colors.yellow,  
-                  padding: EdgeInsets.all(8.0),  
-                  splashColor: Colors.grey,  
-                ),
-                Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: TextFormField(
-          decoration: InputDecoration(
-          labelText: 'Enter text you want to convert'
-          ),
-          autofocus: false,
-          onChanged: (text){
-            value = text;
-          },
-        ),
-      ),
-      RaisedButton(
-        child: Text("Convert", style: TextStyle(fontSize: 20),),
-        onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => tts(value : value),
-                      ));
-            },
-          ),
-      ])
-    );
+      Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(
+                  "images/splashbg.jpg"),
+              fit: BoxFit.cover,
+            ),
+          )
+      // Column(
+      //   children:[
+      // RaisedButton(  
+      //             child: Text("PDF", style: TextStyle(fontSize: 20),),  
+      //             onPressed: () {
+      //                 Navigator.of(context).push(MaterialPageRoute(
+      //                   builder: (context) => browsepdf(),
+      //                 ));
+      //             },  
+      //             color: Colors.red,  
+      //             textColor: Colors.yellow,  
+      //             padding: EdgeInsets.all(8.0),  
+      //             splashColor: Colors.grey,  
+      //           ),
+      //           Padding(
+      //   padding: const EdgeInsets.all(16.0),
+      //   child: TextFormField(
+      //     decoration: InputDecoration(
+      //     labelText: 'Enter text you want to convert'
+      //     ),
+      //     autofocus: false,
+      //     onChanged: (text){
+      //       value = text;
+      //     },
+      //   ),
+      // ),
+      // RaisedButton(
+      //   child: Text("Convert", style: TextStyle(fontSize: 20),),
+      //   onPressed: () {
+      //           Navigator.of(context).push(MaterialPageRoute(
+      //                   builder: (context) => tts(value : value),
+      //                 ));
+      //       },
+      //     ),
+      // ])
+    ));
   }
 }
