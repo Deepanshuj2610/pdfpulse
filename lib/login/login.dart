@@ -35,7 +35,11 @@ import 'package:google_sign_in/google_sign_in.dart';
    Widget build(BuildContext context) {
      return
        Container(
-         color: Colors.brown[800],
+         constraints: BoxConstraints.expand(),
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/splashbg.jpg"),
+                        fit: BoxFit.cover)),
          child: _isLoggedIn
                 ? Column(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -53,7 +57,7 @@ import 'package:google_sign_in/google_sign_in.dart';
                       Image(
                         image: AssetImage('images/logo.png')),
                       Padding(
-                        padding: const EdgeInsets.only(top: 10.0),
+                        padding: const EdgeInsets.only(top: 15.0),
                       ),
                       ButtonTheme(
                       minWidth: 200.0,
@@ -72,7 +76,9 @@ import 'package:google_sign_in/google_sign_in.dart';
         image: AssetImage('images/glogo.png'),
         width: 25,
                                         height: 25,
+                                        
                                         fit:BoxFit.fill),
+                                        
         
   ]
                       ), 

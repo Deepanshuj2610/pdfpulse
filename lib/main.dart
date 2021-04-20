@@ -61,7 +61,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: MyCustomForm(),
+      home: LoginScreen(),
     );
   }
 }
