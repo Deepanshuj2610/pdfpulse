@@ -74,7 +74,10 @@ import 'package:google_sign_in/google_sign_in.dart';
   children: const <Widget>[
       Image(
         image: AssetImage('images/glogo.png'),
-      )                            
+         width: 25,
+                                        height: 25,
+                                        
+                                        fit:BoxFit.fill),                       
         
   ]
                       ), 
