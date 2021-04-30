@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:pdfpulse/browsepdf/textinput.dart';
  
  class LoginScreen extends StatefulWidget {
    @override
@@ -33,6 +34,10 @@ import 'package:google_sign_in/google_sign_in.dart';
 
    @override
    Widget build(BuildContext context) {
+     if (_isLoggedIn == true){
+      Navigator.push(context, MaterialPageRoute(builder: (context) => SecondScreen()));
+    }
+    else {
      return
        Container(
          constraints: BoxConstraints.expand(),
@@ -40,17 +45,21 @@ import 'package:google_sign_in/google_sign_in.dart';
                     image: DecorationImage(
                         image: AssetImage("images/splashbg.jpg"),
                         fit: BoxFit.cover)),
-         child: _isLoggedIn
-                ? Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Image.network(_googleSignIn.currentUser.photoUrl, height: 50.0, width: 50.0,),
-                      Text(_googleSignIn.currentUser.displayName),
-                      OutlineButton( child: Text("Logout"), onPressed: (){
-                        _logout();
-                      },)
-                    ],)
-            : Center(
+                        
+        //  child: _isLoggedIn ?
+           
+                // ? Column(
+                //     mainAxisAlignment: MainAxisAlignment.center,
+                //     children: <Widget>[
+                //       Image.network(_googleSignIn.currentUser.photoUrl, height: 50.0, width: 50.0,),
+                //       Text(_googleSignIn.currentUser.displayName),
+                //       OutlineButton( child: Text("Logout"), onPressed: (){
+                //         _logout();
+                //       },)
+                //     ],)
+                // 
+            //:
+             child: Center(
               child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -90,3 +99,13 @@ import 'package:google_sign_in/google_sign_in.dart';
        );
    }
  }
+ }
+
+ class SecondScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: MyCustomForm(),
+    );
+  }
+}
