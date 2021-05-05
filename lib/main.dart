@@ -1,8 +1,7 @@
-import 'package:pdfpulse/login/login.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pdfpulse/browsepdf/textinput.dart';
-
+import 'package:pdfpulse/screen/login/login.dart';
+import 'package:pdfpulse/constants.dart';
 void main() {
   runApp(MyApp());
 }
@@ -31,32 +30,20 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(seconds: 4),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => SecondScreen())));
   }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       constraints: BoxConstraints.expand(),
-                decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("images/splashbg.jpg"),
-                        fit: BoxFit.cover)),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Image(image: AssetImage('images/logo.png')),
-          Padding(
-            padding: const EdgeInsets.only(top: 10.0),
-          ),
-        ],
-      ),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: splashbg, fit: BoxFit.cover)),
     );
   }
 }
-
 class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
