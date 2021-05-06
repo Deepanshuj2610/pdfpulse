@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:pdfpulse/Screens/Login/login_screen.dart';
 import 'package:pdfpulse/constants.dart';
+import 'package:pdfpulse/route_generator.dart';
 void main() {
   runApp(MyApp());
 }
@@ -15,6 +16,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
       ),
       home: MyHomePage(),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute,
       debugShowCheckedModeBanner: false,
     );
   }
