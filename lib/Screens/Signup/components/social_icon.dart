@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_auth/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:pdfpulse/constants.dart';
 
 class SocalIcon extends StatelessWidget {
   final String iconSrc;
@@ -21,14 +20,9 @@ class SocalIcon extends StatelessWidget {
         decoration: BoxDecoration(
           border: Border.all(
             width: 2,
-            color: purssianblueLightColor,
+            color: purssianblue,
           ),
           shape: BoxShape.circle,
-        ),
-        child: SvgPicture.asset(
-          iconSrc,
-          height: 20,
-          width: 20,
         ),
       ),
     );

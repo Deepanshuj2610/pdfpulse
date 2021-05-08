@@ -34,8 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     Timer(
         Duration(seconds: 4),
-        () => Navigator.of(context).pushNamed('/second'),
-            );
+        () => Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => SecondScreen())));
   }
   @override
   Widget build(BuildContext context) {
@@ -51,6 +51,7 @@ class SecondScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: LoginScreen(),
     );
   }
