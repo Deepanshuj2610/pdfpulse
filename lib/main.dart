@@ -34,8 +34,8 @@ class _MyHomePageState extends State<MyHomePage> {
     super.initState();
     Timer(
         Duration(seconds: 4),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => SecondScreen())));
+        () => Navigator.of(context).pushNamed('/second'),
+            );
   }
   @override
   Widget build(BuildContext context) {

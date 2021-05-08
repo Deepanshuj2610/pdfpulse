@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:routing_prep/main.dart';
+import 'package:pdfpulse/main.dart';
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -8,14 +8,12 @@ class RouteGenerator {
 
     switch (settings.name) {
       case '/':
-        return MaterialPageRoute(builder: (_) => FirstPage());
+        return MaterialPageRoute(builder: (_) => MyHomePage());
       case '/second':
         // Validation of correct data type
         if (args is String) {
           return MaterialPageRoute(
-            builder: (_) => SecondPage(
-                  data: args,
-                ),
+            builder: (_) => SecondScreen(),
           );
         }
         // If args is not of the correct type, return an error page.
